@@ -1,2 +1,2 @@
-# CS-DORKERv3.1
-CS-DORKER says " Give me list !! "
+# CS-Dorker-v3.1
+CS-Dorker says " what do you want ?".
