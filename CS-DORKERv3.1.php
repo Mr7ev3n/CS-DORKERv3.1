@@ -86,7 +86,7 @@ function ask($dork){
 		if($findlink[1] != NULL){
 			foreach ($findlink[1] as $link){
 				$links = "http://$link";
-				//saved("ask_dump.txt","$links\n");
+				saved("ask_dump.txt","$links\n");
 				echo"\e[97m[\e[34mask\e[97m][\e[38;5;208mpage\e[97m:\e[92m$i\e[97m]\n";
 				$allLinks[] = $links;
 			}
@@ -107,7 +107,7 @@ function bing($dork){
         preg_match_all('#<h2><a href="(.*?)" h="ID#si', $data, $links);
         if($links[1] != NULL){
 			foreach ($links[1] as $link) {
-			//saved("bing_dump.txt","$link\n");
+			saved("bing_dump.txt","$link\n");
 			echo"\e[97m[\e[35mbing\e[97m][\e[38;5;208mpage\e[97m:\e[92m$i\e[97m]\n";
             $allLinks[] = $link; 
 			}
@@ -130,7 +130,7 @@ $i = 0;
 		if($trackUrl[1] != NULL){
 			foreach($trackUrl[1] as $index => $key){
 				$jem1 = urldecode(get_string($key, '&q=', '&sa'));
-				//saved("google_dump.txt","$jem1\n");
+				saved("google_dump.txt","$jem1\n");
 				echo"\e[97m[\e[36mgoogle\e[97m][\e[38;5;208mpage\e[97m:\e[92m$i\e[97m]\n";
 				$allLinks[] = urldecode(get_string($key, '&q=', '&sa'));
 			}
@@ -151,7 +151,7 @@ function yahoo($dork){
         preg_match_all('#href="(.*?)" referrerpolicy="origin"#si', $data, $links);
         if($links[1] != NULL){
 			foreach ($links[1] as $link) { 
-			//saved("yahoo_dumper.txt","$link\n");
+			saved("yahoo_dumper.txt","$link\n");
 			echo"\e[97m[\e[93myahoo\e[97m][\e[38;5;208mpage\e[97m:\e[92m$i\e[97m]\n";
             $allLinks[] = $link; 
 			}
@@ -172,7 +172,7 @@ function wow($dork){
         preg_match_all('#RU=(.*?)RK#si', $data, $links);
         if($links[1] != NULL){
 			foreach ($links[1] as $link) {
-			//saved("yahoo_dumper.txt","$link\n");
+			saved("wow_dumper.txt","$link\n");
 			echo"\e[97m[\e[37mwow\e[97m][\e[38;5;208mpage\e[97m:\e[92m$i\e[97m]\n";
             $allLinks[] = urldecode($link);
 			}
@@ -193,7 +193,7 @@ function aol($dork){
         preg_match_all('#" href="(.*?)"#si', $data, $links);
         if($links[1] != NULL){
 			foreach ($links[1] as $link) {
-			//saved("aol_dumper.txt","$link\n");
+			saved("aol_dumper.txt","$link\n");
 			echo"\e[97m[\e[1maol\e[97m][\e[38;5;208mpage\e[97m:\e[92m$i\e[97m]\n";
             $allLinks[] = urldecode($link);
 			}
@@ -212,7 +212,7 @@ function duck($dork){
 		if($trackUrl[1] != NULL){
 			foreach($trackUrl[1] as $jem){
 				$jem1 = "http$jem";
-				//saved("DuckDugo_dump.txt","$jem1\n");
+				saved("DuckDugo_dump.txt","$jem1\n");
 				echo"\e[97m[\e[93mDuckDugo\e[97m][\e[38;5;208mpage\e[97m:\e[92m$i\e[97m]\n";
 				$allLinks[] = $jem1;
 			}
@@ -234,7 +234,7 @@ function izito($dork){
         if($links[1] != NULL){
 			foreach ($links[1] as $linka) {
 			$link ="http$linka";
-			//saved("izito_dumper.txt","$link\n");
+			saved("izito_dumper.txt","$link\n");
 			echo"\e[97m[\e[35mizito\e[97m][\e[38;5;208mpage\e[97m:\e[92m$i\e[97m]\n";
             $allLinks[] = urldecode($link);
 			}
@@ -271,11 +271,11 @@ $done = implode("\n", array_unique($garap));
 saved("result.txt","$done\n");
 $c = count(file("result.txt"));
 $diff = $first->diff($second);
-$elapse = $diff->format('%i,%s');
+$elapse = $diff->format('%i,%s');Mr7ev3n
 echo "$done
 \e[93m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \e[93m+ \e[93m@author    \e[93m: \e[93mMr.7ev3n                   \e[93m+ 
-\e[93m+ \e[91m@github    \e[93m: \e[91mhttps://github.com/N93NT0T \e[93m+ \e[97m[\e[38;5;208mSite \e[97m: \e[38;5;208m$dorkr2\e[97m]
+\e[93m+ \e[91m@github    \e[93m: \e[91mhttps://github.com/Mr7ev3n \e[93m+ \e[97m[\e[38;5;208mSite \e[97m: \e[38;5;208m$dorkr2\e[97m]
 \e[93m+ \e[92m@youtube   \e[93m: \e[92mbit.ly/n93nt0t             \e[93m+ \e[97m[ \e[36mToTaL \e[97m: \e[36m$c \e[97m]
 \e[93m+ \e[35m@twitter   \e[93m: \e[35mbit.ly/t_ng93nt0t          \e[93m+ \e[97m[ \e[92m$elapse Second \e[97m]
 \e[93m+ \e[34m@instagram \e[93m: \e[34mbit.ly/i_n93nt0t           \e[93m+ \e[97m[ \e[93m$c_e\e[97m/\e[93m$c_d \e[97m]
@@ -307,7 +307,7 @@ $elapsed = $diff->format('%H:%i:%s');salam();
 echo"                              \e[92mDONE!                                                   
 \e[93m++++++++++++++++++++++++++++++++++++++++++++++      +        +               +             +            +
 \e[93m+ \e[93m@author       \e[93m: \e[93mMr.7ev3n                   \e[93m  +     +        +           +          +
-\e[93m+ \e[91m@github       \e[93m: \e[91mhttps://github.com/N93NT0T \e[93m             +        +            +      +
+\e[93m+ \e[91m@github       \e[93m: \e[91mhttps://github.com/Mr7ev3n \e[93m             +        +            +      +
 \e[93m+ \e[92m@youtube      \e[93m: \e[92mbit.ly/n93nt0t             \e[93m +    +                               +
 \e[93m+ \e[35m@twitter      \e[93m: \e[35mbit.ly/t_ng93nt0t          \e[93m          +     +           +
 \e[93m+ \e[34m@instagram    \e[93m: \e[34mbit.ly/i_n93nt0t           \e[93m   +                +                   
